@@ -1,0 +1,200 @@
+/********* BASE STYLES ********/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+    box-sizing: inherit;
+}
+
+
+html {
+	font-size: 62.5%;  /* 1rem = 10px*/
+    box-sizing: border-box;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	color: #000;
+}
+
+
+
+/********* HEADER ********/
+
+
+
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+
+
+/********** PORTFOLIO ******/
+
+.portfolio{
+    width: 100%;
+    height: 870px;
+    background-color: rgb(45, 48, 58);
+    border-bottom: 6px solid rgb(50, 55, 70);
+    padding: 69px 40px;
+}
+
+
+h2 {
+    font-size: 30px;
+    line-height: 18px;
+    color: #666d89;
+    font-family: "Lato";
+    font-weight: 900;
+    text-align: left;
+}
+
+.portfolio p {
+    width: 940px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+    font-family: "Lato";
+    font-weight: 300;
+    text-align: left;
+    margin-top: 27px;
+    margin-bottom: 11px;
+}
+
+.tags {
+    margin-bottom: 19px;
+}
+
+.tags li{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 22px;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: left;
+    list-style: none;
+    margin-right: 8px;
+}
+
+.tags li a:visited,
+.tags li a:link {
+    text-decoration: none;
+    width: 57px;
+    height: 22px;
+    border-radius: 5px;
+    border: 1px solid rgb(102, 109, 137);
+    border-radius: 5px;
+    padding: 2px 6px;
+    color: rgb(118, 126, 158);
+    transition: all .3s;;
+}
+
+.tags li a:hover,
+.tags li a:active {
+    color: #fff;
+    border-color: #fff;
+    cursor: pointer;
+}
+
+
+.photos{
+    width: 100%;
+    height:601px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    overflow: hidden;
+}
+
+
+
+
+
+/********** ABOUT US SECTION ********/
+
+.about-us{
+    width: 100%;
+    height: 735px;
+    background-color: #f2f2f2;
+    padding: 65px 40px;
+    border-bottom: 6px solid #fff;
+}
+
+.about-us h2{
+    font-size: 30px;
+    line-height: 18px;
+    color: #666d89;
+    font-family: "Lato";
+    font-weight: 900;
+    text-align: left;
+    margin-top: 3px;
+}
+
+
+
+.about-us p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767e9e;
+    font-family: "Lato";
+    font-weight: 300;
+    text-align: left;
+    margin-top: 28px;
+    margin-bottom: 43px;
+}
+
+.staff {
+    display: grid;
+    grid-template-columns: repeat(3, 30rem);
+    justify-content: space-between;
+}
+
+.person {
+    width: 30rem;
+}
+
+.person img {
+    
+}
+
+.person p {
+    font-size: 12px;
+    line-height: 22px;
+    color: #767e9e;
+    margin: 0;
+    font-weight: 400;
+}
+
+.person h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 18px;
+    color: #666d89;
+    margin: 15px 0 10px 0;
+    font-weight: 900;
+    text-align: left;
+}
+
+.links{
+    margin-top: 23px;
+}
+
+.links a {
+    text-decoration: none;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.links a img{
+    display: inline;
+    transition: all .3s;
+}
+
+.links a img:hover {
+    transform: scale(1.2);
+}
