@@ -38,6 +38,9 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 h1 {
@@ -78,8 +81,13 @@ h1 {
     transition: all .3s;
 }
 
-.navbar ul li a:hover{
+/* .navbar ul li a:hover{
     color: #f06c64;
+    cursor: pointer;
+} */
+
+.activeNav{
+    color: #f06c64 !important;
     cursor: pointer;
 }
 
