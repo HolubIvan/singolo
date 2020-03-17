@@ -19,6 +19,9 @@ body{
 	color: #000;
 }
 
+.display-none{
+    display:none;
+}
 
 
 /********* HEADER ********/
