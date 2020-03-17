@@ -344,25 +344,33 @@ h2 {
     transition: all .3s;;
 }
 
-.tags li a:hover,
+/* .tags li a:hover,
 .tags li a:active {
     color: #fff;
     border-color: #fff;
     cursor: pointer;
-}
+} */
 
+.activeTag{
+    color: #fff !important;
+    border-color: #fff !important;
+    cursor: pointer;
+}
 
 .photos{
     width: 100%;
     height:601px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap: 20px;
+    grid-gap: 14px;
     justify-items: center;
     overflow: hidden;
+    padding: 5px;
 }
 
-
+.activePhoto {
+    outline: 5px solid #F06C64 !important;
+}
 
 
 
