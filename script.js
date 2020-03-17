@@ -14,18 +14,103 @@ nav.addEventListener('click', function(event){
 
 //phone monitor on-off
 
-let phoneV = document.querySelector('.phone-vertical');
-let imageInsidePhoneVert = document.querySelector('.image__inside-v');
-let phoneH = document.querySelector('.phone-horizontal');
-let imageInsidePhoneHor = document.querySelector('.image__inside-h');
 
-phoneV.addEventListener('click', function(event){
-    imageInsidePhoneVert.classList.toggle('display-none');
+
+function screenOnOff(){
+    let phoneV = document.querySelector('.phone-vertical');
+    let imageInsidePhoneVert = document.querySelector('.image__inside-v');
+    let phoneH = document.querySelector('.phone-horizontal');
+    let imageInsidePhoneHor = document.querySelector('.image__inside-h');
+    phoneV.addEventListener('click', function(event){
+        imageInsidePhoneVert.classList.toggle('display-none');
+    })
+    
+    phoneH.addEventListener('click', function(event){
+        imageInsidePhoneHor.classList.toggle('display-none');
+    })
+    
+}
+
+screenOnOff();
+
+
+
+
+
+//slider for phones
+
+let arrows = document.querySelectorAll('.arr');
+let slider = document.querySelector('.slider');
+let phoneContainer = document.querySelector('.phone-container');
+
+const slidesPhone = {
+  0: [`<div class="phone-vertical">
+        <img class="shadow-v" src="./assets/shadow-v.png" alt="shadow of the phone">
+        <img class="phone-v" src="./assets/phone-v.png" alt="vertical phone">
+         <div class="image__inside-v"></div>
+        </div>`,
+      `<div class="phone-horizontal">
+         <img class="shadow-h" src="./assets/shadow-h.png" alt="shadow of the phone">
+         <img class="phone-h" src="./assets/phone-h.png" alt="horizontal phone">
+        <div class="image__inside-h"></div>
+       </div>`
+    ],
+  1: [`
+        <img class="second-slide" src="assets/Slider.png" alt="slider">`]
+};
+
+const slideColor = {
+    0 : "bg-red",
+    1 : "bg-blue",
+    "default": "bg-red"
+}
+
+let currentSlide = 0;
+arrows.forEach(function(el){
+    el.addEventListener('click', function(e){
+
+        if(e.target.classList.contains('arr-left')){
+            currentSlide--;
+            
+        } else if(e.target.classList.contains('arr-right')){
+            currentSlide++;
+            
+        }
+        if(currentSlide == Object.keys(slidesPhone).length){
+            currentSlide = 0;
+        } else if(currentSlide < 0){
+            currentSlide = Object.keys(slidesPhone).length-1;
+        }
+        
+        slider.classList.value = "slider";
+
+        if(slideColor.hasOwnProperty(currentSlide)) {
+            slider.classList.add(slideColor[currentSlide]);
+          } else {
+            slider.classList.add( slideColor["default"] );
+          }
+
+        phoneContainer.innerHTML = '';
+        slidesPhone[currentSlide].forEach(function(e){
+            phoneContainer.innerHTML += `\n${e}`;
+        })
+        screenOnOff();
+    })
+    
 })
 
-phoneH.addEventListener('click', function(event){
-    imageInsidePhoneHor.classList.toggle('display-none');
-})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
