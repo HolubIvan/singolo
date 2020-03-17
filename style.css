@@ -564,6 +564,7 @@ form {
     color: #f48c8f;
     transition: all .3s;
     margin-top: 15px;
+    outline: none;
 }
 
 .submit-button:hover{
@@ -673,3 +674,71 @@ form {
     margin-left: -23px;
     margin-top: 2px;
 }
+
+
+
+
+/* POPUP WINDOW */
+
+.window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 367rem;
+    background-color: #0008;
+    z-index: 3000;
+}
+
+.window-massage{
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    width: 40rem;
+    height:30rem;
+    background-color: #fff;
+    font-size: 1.8rem;
+    color: #000;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.window-massage p {
+    margin-top: 30px;
+    text-align:left;
+}
+
+.window-massage p:first-child{
+    text-align: center;
+}
+
+.window-hidden{
+    display: none;
+}
+
+.popup-button{
+    padding: 15px 50px;
+    display: block;
+    margin: 30px auto 0;
+    border-radius: 5px;
+    border: 0;
+    background-color: #f48c8f;
+    color: #fff;
+    font-size: 2rem;
+    transition: all .3s;
+    outline: 0;
+}
+
+.popup-button:hover{
+    box-shadow:  0 10px 15px rgba(0,0,0, .2);
+    color: #rgba(0,0,0, .9);
+}
+.popup-button:active{
+    box-shadow: 0 5px 10px rgba(0,0,0, .2);
+    color: rgba(0,0,0, .3);
+}
+
+
+
+
+

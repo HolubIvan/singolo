@@ -75,3 +75,50 @@ photosPortfolio.addEventListener('click', function(event){
         photosPortfolio.classList.remove('activePhoto')
     }
 })
+
+
+//form popup window
+
+let popupWindow = document.querySelector('.window');
+let popupButton = document.querySelector('.popup-button');
+let submitFormButton = document.querySelector('.submit-button');
+let inputName = document.querySelector('#user-name');
+let inputMail = document.querySelector('#user-email');
+let inputSubject = document.querySelector('#user-subject');
+let inputDescription = document.querySelector('#user-text');
+let windowSubject = document.querySelector('.window-subject');
+let windowDescr = document.querySelector('.window-descr');
+
+let isValid = false;
+
+submitFormButton.addEventListener('click', function(event){
+    event.preventDefault();
+    
+    if(inputName.checkValidity() == true){
+        popupWindow.classList.toggle('window-hidden');
+
+        if(inputSubject.value == ''){
+            windowSubject.textContent = 'Без темы'
+        } else {
+            windowSubject.textContent = `Тема: ${inputSubject.value}`;
+        }
+    
+        if(inputDescription.value == ''){
+            windowDescr.textContent = 'Без описания'
+        } else {
+            windowDescr.textContent = `Описание: ${inputDescription.value}`;
+        }
+    
+    } else if(inputName.checkValidity() == false){
+        return false;
+    }
+})
+
+
+popupButton.addEventListener('click', function(e){
+    popupWindow.classList.toggle('window-hidden');
+    inputName.value = '';
+    inputMail.value = '';
+    inputSubject.value = '';
+    inputDescription.value = '';
+})

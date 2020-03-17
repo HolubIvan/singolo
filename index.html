@@ -232,8 +232,8 @@
 
                     <div class="form">
                         <form action="singolo3.html" method="post">
-                            <input type="text" name="user-name" id="user-name" required placeholder="Name">
-                            <input type="email" name="user-email" id="user-email" required placeholder="Email">
+                            <input type="text" name="user-name" id="user-name" required placeholder="Name (Required)">
+                            <input type="email" name="user-email" id="user-email" required placeholder="Email (Required)">
                             <input type="text" name="user-subject" id="user-subject" placeholder="Subject">
                             <textarea name="user-text" id="user-text" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
                             <button type="submit" class="submit-button">Submit</button>
@@ -290,6 +290,15 @@
 
         </footer>
 
+    </div>
+
+    <div class="window window-hidden">
+        <div class="window-massage">
+            <p>Письмо отправлено</p>
+            <p class="window-subject"></p>
+            <p class="window-descr"></p>
+            <button class="popup-button" type="submit">OK</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
