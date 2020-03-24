@@ -6,7 +6,7 @@ let itemsNav = document.querySelectorAll('.navbar ul li a');
 
 nav.addEventListener('click', function(event){
     itemsNav.forEach(function(el){
-        el.classList.remove('activeNav');
+        el.classList.remove('activeNav');       
     })
     event.target.classList.add('activeNav');
 })
@@ -98,21 +98,6 @@ arrows.forEach(function(el){
     })
     
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //active tags and photo moving
@@ -207,3 +192,67 @@ popupButton.addEventListener('click', function(e){
     inputSubject.value = '';
     inputDescription.value = '';
 })
+
+
+
+
+
+
+
+//burger-menu working with media-queries
+
+
+let checkbox = document.querySelector('.navigation__checkbox');
+let navigation = document.querySelector('.navigation');
+let ul = document.querySelector('.navbar ul');
+let backgroundNav = document.querySelector('.background');
+let navIcon = document.querySelector('.navigation__icon');
+
+
+navigation.addEventListener('click', function(el){
+    var ww = document.documentElement.clientWidth; 
+    if(ww < 767){  
+        if(checkbox.checked == true){
+            ul.style.display = 'block'
+            backgroundNav.style.display = '';
+            navIcon.classList.add('rotate');
+        } else if (checkbox.checked == false){
+            ul.style.display = 'none'
+            navIcon.classList.remove('rotate');
+        }
+    }
+})
+
+function navBar(){
+    var w = document.documentElement.clientWidth;   
+    
+    if(w > 767){
+        ul.style.display = 'block'
+        if(checkbox.checked == true){
+            checkbox.checked = false;
+        }
+        navIcon.classList.remove('rotate');
+    }
+
+    if(w < 767){
+        ul.style.display = 'none'
+    }
+}
+
+window.addEventListener('resize', navBar)
+
+
+
+
+
+function change(){
+    if(document.documentElement.clientWidth < 767){
+        ul.addEventListener('click', function(){
+            ul.style.display = 'none';
+            backgroundNav.style.display = 'none';
+            checkbox.checked = false;
+        })
+    }
+}
+
+change();
